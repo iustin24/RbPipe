@@ -30,7 +30,7 @@ fn main() -> Result<()> {
     let stdin = io::stdin();
     for line in stdin.lock().lines() {
         if let Ok(line) = line {
-            // Send message to the specified RabbitMQ queue.
+            // Send message to the specified RabbitMQ queue
             exchange.publish(Publish::new(line.as_bytes(), queue.name()))?;
         }
     }
